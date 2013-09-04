@@ -16,8 +16,8 @@ LoadingViewController *loadingViewController = [[LoadingViewController alloc] in
 ```
                                                                   
 Where `^(void) {}` is some block to be executed as a "checking task". That is to say, the LoadingViewController will
-periodically run this this block to check if the "task" is completed. Structure the block so that it returns YES when
-your desired task is complete, and NO when it is not yet complete.
+periodically run this this block to check if the "task" is completed. Structure the block so that it returns `YES` when
+your desired task is complete, and `NO` when it is not yet complete.
 
 Note that the `delegate` parameter is set to `self` - this means that `self` must implement the
 LoadingViewControllerDelegate protocol.
