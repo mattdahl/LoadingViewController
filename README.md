@@ -22,7 +22,8 @@ your desired task is complete, and NO when it is not yet complete.
 Note that the `delegate` parameter is set to `self` - this means that `self` must implement the
 LoadingViewControllerDelegate protocol.
 
-That's it! The LoadingViewController will now *automatically* handle its own presentation and dismissal.
+That's it! Simply instantiating the LoadingViewController means that it will now *automatically* handle its own
+presentation and dismissal.
 
 ###Delegate Methods
 
