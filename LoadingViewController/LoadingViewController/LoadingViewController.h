@@ -28,6 +28,10 @@
                bundle:(NSBundle *)nibBundleOrNil
              delegate:(id<LoadingViewControllerDelegate>)delegateOrNil
                  task:(bool(^)(void))task;
+/*- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil
+             delegate:(id<LoadingViewControllerDelegate>)delegateOrNil
+                 task:(NSInvocation)task; */
 
 // Examples tasks could be checking if data has loaded from an API, checking if a view has finished loading, etc.
 
@@ -39,7 +43,7 @@
 
 @property (nonatomic, strong) LoadingViewController *loadingViewController;
 
-- (float)frequencyOfTaskCheckInSeconds;
+- (float)taskCheckTimeInterval; // In seconds
 - (BOOL)shouldLoadingViewControllerAnimate:(LoadingViewController *)loadingViewController;
 - (void)loadingViewControllerDidStartLoading:(LoadingViewController *)loadingViewController;
 - (void)loadingViewControllerDidFinishLoading:(LoadingViewController *)loadingViewController;

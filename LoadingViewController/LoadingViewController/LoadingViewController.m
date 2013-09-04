@@ -26,12 +26,12 @@
         
         [self.view setFrame:CGRectMake(80, 150, 160, 150)];
         
-        t = [NSTimer scheduledTimerWithTimeInterval:[delegate frequencyOfTaskCheckInSeconds]
+        t = [NSTimer scheduledTimerWithTimeInterval:[delegate taskCheckTimeInterval]
                                              target:self selector:@selector(updateLoadingStatus)
                                            userInfo:nil
                                             repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:t
-                                      forMode:NSDefaultRunLoopMode];
+                                     forMode:NSDefaultRunLoopMode];
     }
     return self;
 }
@@ -40,8 +40,9 @@
     [super viewDidLoad];
     self.view.layer.cornerRadius = 5;
     self.view.layer.masksToBounds = YES;
-    if ([delegate shouldLoadingViewControllerAnimate:self])
-        [actvityIndicatorView startAnimating];
+    if ([delegate shouldLoadingViewControllerAnimate:self]) {
+        [actvityIndicatorView startAnimating];  
+    }
     [self.view setFrame:CGRectMake(80, 150, 160, 150)];
 }
 
