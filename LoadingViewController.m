@@ -19,6 +19,8 @@
         [self setDelegate:delegateOrNil];
         [self setLoadingTask:task];
         
+        // Adds view to the delegate's window
+        [UIApplication.sharedApplication.delegate.window addSubview:self.view];
         [delegate loadingViewControllerDidStartLoading:self];
         
         if ([self isTaskCompleted])
@@ -55,6 +57,7 @@
         [delegate loadingViewControllerDidFinishLoading:self];
         [t invalidate];
         t = nil;
+        [self.view removeFromSuperview]; // Removes the view
     }
 }
 
