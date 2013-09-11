@@ -12,10 +12,10 @@ First, instantiate a LoadingViewController object in the controller that you wan
 LoadingViewController *loadingViewController = [[LoadingViewController alloc] initWithNibName:@"LoadingViewController"
                                                                                        bundle:nil
                                                                                      delegate:self
-                                                                                         task:^bool(void) {}];
+                                                                                         task:someTask];
 ```
                                                                   
-Where `^(void) {}` is some block to be executed as a "checking task". That is to say, the LoadingViewController will
+Where `someTask` is some block of type `bool(^)(void)` to be executed as a "checking task". That is to say, the LoadingViewController will
 periodically run this this block to check if the "task" is completed. Structure the block so that it returns `YES` when
 your desired task is complete, and `NO` when it is not yet complete.
 
